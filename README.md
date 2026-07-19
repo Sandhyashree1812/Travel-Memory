@@ -42,14 +42,20 @@ Steps to clone:
     C:\Users\sandy\Git Travelmemory\TravelMemory>git clone https://github.com/UnpredictablePrashant/TravelMemory.git
    
 4. After cloning the project, it should look something like this:
+5. <img width="260" height="343" alt="image" src="https://github.com/user-attachments/assets/a833d6a2-e500-4992-91d4-cf176d7ed864" />
+
 
 TravelMemory/
+
 │
 ├── backend/
+
 │
 ├── frontend/
+
 │
 └── README.md
+
 
 ===================================================
 Steps:
