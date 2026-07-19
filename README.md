@@ -337,7 +337,19 @@ App.js
 
 <img width="273" height="42" alt="image" src="https://github.com/user-attachments/assets/cb9f6aba-12e8-41a9-9dd3-026aebc5b029" /> 
 
+
+<img width="916" height="425" alt="Screenshot 2026-07-18 210619" src="https://github.com/user-attachments/assets/196d9190-62c6-46ce-a132-dcc8cb29e5b6" />
+
+
 <img width="818" height="429" alt="Screenshot 2026-07-18 211425" src="https://github.com/user-attachments/assets/cefb0192-d342-42b0-b31f-0e4b4f719ab1" /> 
+
+
+<img width="937" height="433" alt="Screenshot 2026-07-18 210635" src="https://github.com/user-attachments/assets/7f52b947-4ab7-4059-bed9-adb8127af09d" />
+
+
+
+<img width="915" height="423" alt="Screenshot 2026-07-18 211919" src="https://github.com/user-attachments/assets/da07a67d-9e3a-49dc-810e-85f557bc5dbb" />
+
 
 
 
