@@ -1,11 +1,47 @@
 # Travel-Memory
 
-1. We clone the Travel Memory project :
+==================================================
+
+Explanation:
+
+Travel Memory is a web application which we are building to see how the front and backend are connecting.
+
+The frontend :
+============
+
+1. Frontend (React) , this is the part the user sees and runs on :http://localhost:3000
+2. sends requests to the backend, and the backend stores data in MongoDB.
+
+Backend (Node.js) :
+=================
+
+1. The backend receives requests from React, connects to MongoDB, saves data, returns data
+2. Runs on : http://localhost:3001
+
+MongoDB :
+========
+
+MongoDB stores the travel memories.
+
+Each travel memory is one document like:
+
+{
+  "tripName": "Incredible India",
+  "totalCost": 800000
+}
+
+============================ 
+
+First we Clone the Project.
+(Instead of creating every file manually, you download the existing project from GitHub, we cloned the project from github link: https://github.com/UnpredictablePrashant/TravelMemory.git)
 
 Steps to clone:
 1. copy the code link from github
-2. 
-After cloning the project, it should look something like this:
+2. Go to VS code terminal to the folder where we want to clone and type the clone command :
+
+    C:\Users\sandy\Git Travelmemory\TravelMemory>git clone https://github.com/UnpredictablePrashant/TravelMemory.git
+   
+4. After cloning the project, it should look something like this:
 
 TravelMemory/
 │
@@ -15,15 +51,10 @@ TravelMemory/
 │
 └── README.md
 
-The frontend sends requests to the backend, and the backend stores data in MongoDB.
-
+===================================================
 Steps:
 
-1. In VS code we will create the folders as below:
-TravelMemory
-    backend
-    frontend
-2. In MongoDB Atlas, create a Project
+1. In MongoDB Atlas, create a Project
 
    <img width="751" height="215" alt="image" src="https://github.com/user-attachments/assets/41e50151-60b4-48e3-a5fb-f68c79065a14" />
 
