@@ -3,36 +3,45 @@
 ==================================================
 
 Explanation:
+===========
 
 Travel Memory is a web application which we are building to see how the front and backend are connecting.
 
-The frontend :
-============
+   The frontend :
+   ============
 
-1. Frontend (React) , this is the part the user sees and runs on :http://localhost:3000
-2. sends requests to the backend, and the backend stores data in MongoDB.
+  1. Frontend (React) , this is the part the user sees and runs on :http://localhost:3000
+  2. sends requests to the backend, and the backend stores data in MongoDB.
 
-Backend (Node.js) :
-=================
+   Backend (Node.js) :
+   =================
 
-1. The backend receives requests from React, connects to MongoDB, saves data, returns data
-2. Runs on : http://localhost:3001
+  1. The backend receives requests from React, connects to MongoDB, saves data, returns data
+  2. Runs on : http://localhost:3001
 
-MongoDB :
-========
+  MongoDB :
+  ========
 
-MongoDB stores the travel memories.
+  MongoDB stores the travel memories.
 
-Each travel memory is one document like:
+  Each travel memory is one document like:
 
-{
-  "tripName": "Incredible India",
-  "totalCost": 800000
-}
+   {
+     "tripName": "Incredible India",
+     "totalCost": 800000
+   }
 
-============================ 
+======================================================================== 
+
+Lets Start
+========== 
+
 
 Steps:
+========= 
+
+Cloning:
+========
 1. First we Clone the Project.
 (Instead of creating every file manually, you download the existing project from GitHub, we cloned the project from github link: https://github.com/UnpredictablePrashant/TravelMemory.git)
 
@@ -43,6 +52,7 @@ Steps:
      C:\Users\sandy\Git Travelmemory\TravelMemory>git clone https://github.com/UnpredictablePrashant/TravelMemory.git
    
 2. After cloning the project, it should look something like this:
+   
  <img width="260" height="343" alt="image" src="https://github.com/user-attachments/assets/a833d6a2-e500-4992-91d4-cf176d7ed864" />
 
 
@@ -64,7 +74,9 @@ The backend folder looks like this :
 
 Note : 
 =======
-What each folder/file does
+
+What each folder/file does :
+
 | File/Folder    | Purpose                                                                      |
 | -------------- | ---------------------------------------------------------------------------- |
 | controllers    | Contains the logic for handling requests (e.g., saving or retrieving trips). |
@@ -74,36 +86,62 @@ What each folder/file does
 | conn.js        | Connects the application to MongoDB.                                         |
 | package.json   | Lists the backend dependencies and scripts.                                  |
 
-
-
-
 ===================================================
+
+Creating database in Mongodb:
+============================= 
+
 Steps:
+======
 
 3. In MongoDB Atlas, create a Project
 
    <img width="751" height="215" alt="image" src="https://github.com/user-attachments/assets/41e50151-60b4-48e3-a5fb-f68c79065a14" />
 
-4. Create cluster
+4. Create cluster and database 
+   
    <img width="901" height="333" alt="image" src="https://github.com/user-attachments/assets/12726390-44c3-465f-8146-7d5b896fd6ff" />
+
+   
    <img width="251" height="112" alt="image" src="https://github.com/user-attachments/assets/21e64efd-77fd-47d4-b0e7-ecea42a36d84" />
 
 
    <img width="367" height="131" alt="image" src="https://github.com/user-attachments/assets/5591216a-e24c-4dab-8979-e37df8cd6f53" />
 
 
- 5. Open your cluster. click connect drivers
-    <img width="572" height="376" alt="image" src="https://github.com/user-attachments/assets/00d9ef69-f01e-4c5a-9e99-47b8aa0b1027" />
+ 5. Open your cluster, click connect, then click drivers:
+    
+     <img width="572" height="376" alt="image" src="https://github.com/user-attachments/assets/00d9ef69-f01e-4c5a-9e99-47b8aa0b1027" />
 
   <img width="571" height="392" alt="image" src="https://github.com/user-attachments/assets/dd262493-556e-4a58-b325-f0655fce98c5" />
 
-6. copy the string, replace the user name and password and data base name to add to the .env file in backend:
-mongodb+srv://Sandhyashree:<db_password>@travelmemorycluster.sntukb6.mongodb.net/?appName=Travelmemorycluster
+6. copy the string and save it for further use. We would replace the user name and password and data base name to add to the .env file in backend later on in the below copied string:
+   
+  String copied : 
+  mongodb+srv://Sandhyashree:<db_password>@travelmemorycluster.sntukb6.mongodb.net/?appName=Travelmemorycluster
 
-Also Allow your IP address in Network Access.
+7. Also Allow your IP address in Network Access:
+
+   Steps:
+   ======
+   
+   1. Click the Database and Network Access from the left side bar:
+
+   <img width="181" height="431" alt="image" src="https://github.com/user-attachments/assets/4654ba9d-cb89-4443-8c28-fc7da34cf008" />
+
+   2. Under the Network access, click IP Address List and chnage the IP Address :
+
+  <img width="193" height="171" alt="image" src="https://github.com/user-attachments/assets/715234b2-af5e-400d-b721-73995d6136af" /> 
+
+   3.  Add Access List Entry as : 0.0.0.0/0 
+       Comment : you can give any name
+
+  <img width="428" height="343" alt="image" src="https://github.com/user-attachments/assets/03fe71aa-1fa0-42a9-96d6-553809015742" />
 
 =================== 
 
+Creating .env files:
+====================
 
 Note : 
 =======
@@ -115,40 +153,56 @@ We don't store passwords or connection strings in the code because:
 ==============================
 
 
-5. create .env fies in both the backend and frontend.
-6. In .env file of backend add the below code:
- MONGO_URI=mongodb+srv://Sandhyashree:<db_password>@travelmemorycluster.sntukb6.mongodb.net/?appName=TravelmemoryclusterappName=Travelmemorycluster
-PORT=3001
+8. create .env fies in both the backend and frontend.
+
+ Steps:
+ =====
+ 1. In .env file of backend add the below code:
+  MONGO_URI=mongodb+srv://Sandhyashree:<db_password>@travelmemorycluster.sntukb6.mongodb.net/?appName=TravelmemoryclusterappName=Travelmemorycluster
+ PORT=3001
 
 ===================
-Note:
-=====
-Replace in the above string with the below details:
 
-<username> with your MongoDB Atlas username.
-<password> with your MongoDB Atlas password.
-<cluster> and <appName> with the values from your Atlas connection string.
+  Note:
+  =====
+
+ 2. Replace in the above string with the below details:
+
+   <username> with your MongoDB Atlas username.
+   <password> with your MongoDB Atlas password.
+   <cluster> and <appName> with the values from your Atlas connection string.
+   
 ====================================
 
 <img width="811" height="108" alt="image" src="https://github.com/user-attachments/assets/15d40ec0-e665-42c0-80fd-c59909112a4c" />
 
-7. In frontend .env file add the below code:
-   REACT_APP_BACKEND_URL=http://localhost:3001
+
+========================================  
+
+ 3. In frontend .env file add the below code:
+    REACT_APP_BACKEND_URL=http://localhost:3001
 
 <img width="576" height="59" alt="image" src="https://github.com/user-attachments/assets/65182e9e-e541-4c03-a9a5-95461cd79b9e" />
 
 
-
-  Save both the files: Cntl+S
-   ================================================
+   Save both the files: press Cntl+S
+ 
+ ================================================
 
  
- 8.In VS code :
-   Go into the backend folder, type :
+ 9. In VS code :
+    Go into the backend folder, type the below commands:
+    
      1.   PS C:\Users\sandy\Git Travelmemory\TravelMemory> cd backend
      2.  PS C:\Users\sandy\Git Travelmemory\TravelMemory\backend> npm install
         if npm install gives error, type the below command         
      3.  PS C:\Users\sandy\Git Travelmemory\TravelMemory\backend> npm.cmd install
+
+
+<img width="403" height="42" alt="image" src="https://github.com/user-attachments/assets/573eb415-fe5a-4408-b7a6-5cf69a917c3c" />
+
+         
+  ====================================       
    
    note: npm install reads package.json and downloads all required packages.
 
@@ -165,9 +219,10 @@ Replace in the above string with the below details:
    In the backend terminal type the command:
 
    PS C:\Users\sandy\Git Travelmemory\TravelMemory\backend>node index.js
+   
   <img width="452" height="39" alt="image" src="https://github.com/user-attachments/assets/d69c0e2c-6e39-4d09-ad46-bd93e7f29fb2" />
 
- 10. This confirms:
+ 11. This confirms:
     1. the Express server is running,
     2. the application successfully connected to MongoDB.
 
