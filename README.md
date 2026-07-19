@@ -1,6 +1,11 @@
 # Travel-Memory
 
-The prohect looks like below:
+1. We clone the Travel Memory project :
+
+Steps to clone:
+1. copy the code link from github
+2. 
+After cloning the project, it should look something like this:
 
 TravelMemory/
 │
@@ -36,8 +41,17 @@ TravelMemory
   <img width="571" height="392" alt="image" src="https://github.com/user-attachments/assets/dd262493-556e-4a58-b325-f0655fce98c5" />
 
   copy the string, replace the user name and password and data base name :
-  mongodb+srv://Sandhyashree:Travel_123@travelmemorycluster.sntukb6.mongodb.net/TravelMemory?appName=Travelmemorycluster
+mongodb+srv://Sandhyashree:<db_password>@travelmemorycluster.sntukb6.mongodb.net/?appName=Travelmemorycluster
   
+5. create .env fies in both the backend and frontend.
+6. In .env file of backend add the below code:
+MONGO_URI=mongodb+srv://Sandhyashree:<db_password>@travelmemorycluster.sntukb6.mongodb.net/?appName=TravelmemoryclusterappName=Travelmemorycluster
+PORT=3001
+7. In frontend .env file add the below code:
+   REACT_APP_BACKEND_URL=http://localhost:3001
 
+   Save both the files: Cntl+S
+ 8.In VS code :
+     
 
 
