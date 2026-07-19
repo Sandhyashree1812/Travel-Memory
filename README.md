@@ -310,14 +310,22 @@ App.js
 
 =================== 
 
-13. nstall Frontend Packages
+13. install Frontend Packages
 
-Open a new terminal (keep the backend terminal running).
+    React application needs to know where the backend is running.
 
-Go to the frontend folder:
+    Instead of hardcoding the URL in multiple places, you store it in an environment variable.
 
-PS C:\Users\sandy\Git Travelmemory\TravelMemory> cd frontend
-PS C:\Users\sandy\Git Travelmemory\TravelMemory\frontend> npm.cmd install
+    Whenever the frontend makes an API call, it can use: process.env.REACT_APP_BACKEND_URL
+    which resolves to: http://localhost:3001
+
+15. Open a new terminal (keep the backend terminal running).
+
+    1.  Go to the frontend folder:
+
+   PS C:\Users\sandy\Git Travelmemory\TravelMemory> cd frontend
+   PS C:\Users\sandy\Git Travelmemory\TravelMemory\frontend> npm.cmd install
+   PS C:\Users\sandy\Git Travelmemory\TravelMemory\frontend> npm.cmd start
 
 <img width="446" height="45" alt="image" src="https://github.com/user-attachments/assets/c9f797da-b05a-49d8-8c3b-1828a7915627" />
 
@@ -327,7 +335,10 @@ PS C:\Users\sandy\Git Travelmemory\TravelMemory\frontend> npm.cmd install
 
 <img width="649" height="449" alt="image" src="https://github.com/user-attachments/assets/bf126c9d-2c7a-490e-b8c9-f0353e325727" />
 
-<img width="273" height="42" alt="image" src="https://github.com/user-attachments/assets/cb9f6aba-12e8-41a9-9dd3-026aebc5b029" />
+<img width="273" height="42" alt="image" src="https://github.com/user-attachments/assets/cb9f6aba-12e8-41a9-9dd3-026aebc5b029" /> 
+
+<img width="818" height="429" alt="Screenshot 2026-07-18 211425" src="https://github.com/user-attachments/assets/cefb0192-d342-42b0-b31f-0e4b4f719ab1" /> 
+
 
 
 
