@@ -32,17 +32,18 @@ Each travel memory is one document like:
 
 ============================ 
 
-First we Clone the Project.
+Steps:
+1. First we Clone the Project.
 (Instead of creating every file manually, you download the existing project from GitHub, we cloned the project from github link: https://github.com/UnpredictablePrashant/TravelMemory.git)
 
-Steps to clone:
-1. copy the code link from github
-2. Go to VS code terminal to the folder where we want to clone and type the clone command :
+  Steps to clone:
+  1. copy the code link from github
+  2. Go to VS code terminal to the folder where we want to clone and type the clone command :
 
-    C:\Users\sandy\Git Travelmemory\TravelMemory>git clone https://github.com/UnpredictablePrashant/TravelMemory.git
+     C:\Users\sandy\Git Travelmemory\TravelMemory>git clone https://github.com/UnpredictablePrashant/TravelMemory.git
    
-4. After cloning the project, it should look something like this:
-5. <img width="260" height="343" alt="image" src="https://github.com/user-attachments/assets/a833d6a2-e500-4992-91d4-cf176d7ed864" />
+2. After cloning the project, it should look something like this:
+ <img width="260" height="343" alt="image" src="https://github.com/user-attachments/assets/a833d6a2-e500-4992-91d4-cf176d7ed864" />
 
 
 TravelMemory/
@@ -56,15 +57,34 @@ TravelMemory/
 │
 └── README.md
 
+=============================== 
+The backend folder looks like this :
+
+<img width="230" height="184" alt="image" src="https://github.com/user-attachments/assets/df4cd4ef-2fcb-4427-aef8-7ccc2976893e" />
+
+Note : 
+=======
+What each folder/file does
+| File/Folder    | Purpose                                                                      |
+| -------------- | ---------------------------------------------------------------------------- |
+| controllers    | Contains the logic for handling requests (e.g., saving or retrieving trips). |
+| models         | Defines the structure of data stored in MongoDB using Mongoose schemas.      |
+| routes         | Maps API URLs (such as `/api/trips`) to controller functions.                |
+| index.js       | Starts the Express server and registers routes.                              |
+| conn.js        | Connects the application to MongoDB.                                         |
+| package.json   | Lists the backend dependencies and scripts.                                  |
+
+
+
 
 ===================================================
 Steps:
 
-1. In MongoDB Atlas, create a Project
+3. In MongoDB Atlas, create a Project
 
    <img width="751" height="215" alt="image" src="https://github.com/user-attachments/assets/41e50151-60b4-48e3-a5fb-f68c79065a14" />
 
-3. Create cluster
+4. Create cluster
    <img width="901" height="333" alt="image" src="https://github.com/user-attachments/assets/12726390-44c3-465f-8146-7d5b896fd6ff" />
    <img width="251" height="112" alt="image" src="https://github.com/user-attachments/assets/21e64efd-77fd-47d4-b0e7-ecea42a36d84" />
 
@@ -72,23 +92,197 @@ Steps:
    <img width="367" height="131" alt="image" src="https://github.com/user-attachments/assets/5591216a-e24c-4dab-8979-e37df8cd6f53" />
 
 
- 4. Open your cluster. click connect drivers
+ 5. Open your cluster. click connect drivers
     <img width="572" height="376" alt="image" src="https://github.com/user-attachments/assets/00d9ef69-f01e-4c5a-9e99-47b8aa0b1027" />
 
   <img width="571" height="392" alt="image" src="https://github.com/user-attachments/assets/dd262493-556e-4a58-b325-f0655fce98c5" />
 
-  copy the string, replace the user name and password and data base name :
+6. copy the string, replace the user name and password and data base name to add to the .env file in backend:
 mongodb+srv://Sandhyashree:<db_password>@travelmemorycluster.sntukb6.mongodb.net/?appName=Travelmemorycluster
-  
+
+Also Allow your IP address in Network Access.
+
+=================== 
+
+
+Note : 
+=======
+We don't store passwords or connection strings in the code because:
+1.they contain sensitive information,
+2.they can differ between development and production.
+3.Instead, we use a .env file that is typically not committed to GitHub (it's usually listed in .gitignore).
+
+==============================
+
+
 5. create .env fies in both the backend and frontend.
 6. In .env file of backend add the below code:
-MONGO_URI=mongodb+srv://Sandhyashree:<db_password>@travelmemorycluster.sntukb6.mongodb.net/?appName=TravelmemoryclusterappName=Travelmemorycluster
+ MONGO_URI=mongodb+srv://Sandhyashree:<db_password>@travelmemorycluster.sntukb6.mongodb.net/?appName=TravelmemoryclusterappName=Travelmemorycluster
 PORT=3001
+
+===================
+Note:
+=====
+Replace in the above string with the below details:
+
+<username> with your MongoDB Atlas username.
+<password> with your MongoDB Atlas password.
+<cluster> and <appName> with the values from your Atlas connection string.
+====================================
+
+<img width="811" height="108" alt="image" src="https://github.com/user-attachments/assets/15d40ec0-e665-42c0-80fd-c59909112a4c" />
+
 7. In frontend .env file add the below code:
    REACT_APP_BACKEND_URL=http://localhost:3001
 
-   Save both the files: Cntl+S
+<img width="576" height="59" alt="image" src="https://github.com/user-attachments/assets/65182e9e-e541-4c03-a9a5-95461cd79b9e" />
+
+
+
+  Save both the files: Cntl+S
+   ================================================
+
+ 
  8.In VS code :
+   Go into the backend folder, type :
+     1.   PS C:\Users\sandy\Git Travelmemory\TravelMemory> cd backend
+     2.  PS C:\Users\sandy\Git Travelmemory\TravelMemory\backend> npm install
+        if npm install gives error, type the below command         
+     3.  PS C:\Users\sandy\Git Travelmemory\TravelMemory\backend> npm.cmd install
+   
+   note: npm install reads package.json and downloads all required packages.
+
+   After installation, you'll see:
+
+   backend
+    │
+    ├── node_modules
+    ├── package-lock.json
+
+
+9. Then Start the Backend
+
+   In the backend terminal type the command:
+
+   PS C:\Users\sandy\Git Travelmemory\TravelMemory\backend>node index.js
+  <img width="452" height="39" alt="image" src="https://github.com/user-attachments/assets/d69c0e2c-6e39-4d09-ad46-bd93e7f29fb2" />
+
+ 10. This confirms:
+    1. the Express server is running,
+    2. the application successfully connected to MongoDB.
+
+  ========================================= 
+
+  frontend explanation :
+
+  The frontend is built using React.
+
+  Its job is to:
+
+  Display travel memories.
+  Show images and trip details.
+  Let users add, edit, or delete trips.
+  Send requests to the backend.
+
+  It looks like below:
+
+  React Frontend (localhost:3000)
+            │
+            │ HTTP Requests
+            ▼
+  Node.js Backend (localhost:3001)
+            │
+            ▼
+   MongoDB Atlas 
+
+   ============================= 
+
+   11. front end folder looks like below:
+
+       <img width="203" height="272" alt="image" src="https://github.com/user-attachments/assets/0c1b199a-254f-45e0-9afe-8f108bb68390" />
+
+  What each folder does is :
+
+       | Folder/File     | Purpose                                            |
+| --------------- | -------------------------------------------------- |
+| `public/`       | Contains static files like `index.html` and icons. |
+| `src/`          | Contains the React application code.               |
+| `package.json`  | Lists all React dependencies.                      |
+| `node_modules/` | Created after running `npm install`.               |
+
+
+============== 
+
+12. Expand src.
+
+You may see something like:
+
+<img width="218" height="317" alt="image" src="https://github.com/user-attachments/assets/3b419098-2184-47b3-9af6-ba9d28fd7a18" /> 
+
+src/
+│
+├── components/
+├── App.js
+├── index.js
+├── App.css
+└── ...
+
+
+| File          | Purpose                                               |
+| ------------- | ----------------------------------------------------- |
+| `index.js`    | Entry point of the React application.                 |
+| `App.js`      | Main component that renders the application.          |
+| `components/` | Reusable UI pieces like cards, forms, and navigation. |
+| `App.css`     | Styles for the application.                           |
+
+============= 
+
+
+This is something like below:
+
+
+index.js
+    │
+    ▼
+App.js
+    │
+    ├── Navbar
+    ├── Home
+    ├── Travel Card
+    ├── Add Trip Form
+    └── Footer
+
+
+=================== 
+
+13. nstall Frontend Packages
+
+Open a new terminal (keep the backend terminal running).
+
+Go to the frontend folder:
+
+PS C:\Users\sandy\Git Travelmemory\TravelMemory> cd frontend
+PS C:\Users\sandy\Git Travelmemory\TravelMemory\frontend> npm.cmd install
+
+<img width="446" height="45" alt="image" src="https://github.com/user-attachments/assets/c9f797da-b05a-49d8-8c3b-1828a7915627" />
+
+
+<img width="437" height="21" alt="image" src="https://github.com/user-attachments/assets/640091af-7c07-4abb-a2ee-c629a75a0ac9" />
+
+
+<img width="649" height="449" alt="image" src="https://github.com/user-attachments/assets/bf126c9d-2c7a-490e-b8c9-f0353e325727" />
+
+<img width="273" height="42" alt="image" src="https://github.com/user-attachments/assets/cb9f6aba-12e8-41a9-9dd3-026aebc5b029" />
+
+
+
+
+
+
+
+
+
+
      
 
 
